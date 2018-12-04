@@ -28,10 +28,10 @@ pipeline {
           steps{
             container('docker') {
                   sh "docker build \
-                          --file ${WORKSPACE}/kubernetes/docker/jupyterhub/Dockerfile \
+                          --file ${WORKSPACE}/9.6/Dockerfile \
                           --tag=${config.docker.server}/${config.docker.postgrisRepository}:${config.docker.postgris96Version}-${containerTag} \
                           --tag=${config.docker.server}/${config.docker.postgrisRepository}:${config.docker.postgris96Version}-${env.BRANCH_NAME}_latest \
-                          ${WORKSPACE}/kubernetes/docker/jupyterhub"
+                          ${WORKSPACE}/9.6"
                   sh "docker login \
                               --username ${config.docker.username} \
                               --password \$(cat /tmp/docker-password/docker_password) \
@@ -48,10 +48,10 @@ pipeline {
           steps{
             container('docker') {
                   sh "docker build \
-                          --file ${WORKSPACE}/kubernetes/docker/postgresql/Dockerfile \
+                          --file ${WORKSPACE}/11/Dockerfile \
                           --tag=${config.docker.server}/${config.docker.postgrisRepository}:${config.docker.postgris11Version}-${containerTag} \
                           --tag=${config.docker.server}/${config.docker.postgrisRepository}:${config.docker.postgris11Version}-${env.BRANCH_NAME}_latest \
-                          ${WORKSPACE}/kubernetes/docker/postgresql"
+                          ${WORKSPACE}/11"
                   sh "docker login \
                               --username ${config.docker.username} \
                               --password \$(cat /tmp/docker-password/docker_password) \
