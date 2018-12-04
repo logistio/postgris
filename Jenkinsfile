@@ -2,7 +2,7 @@
 pipeline {
   agent {
     kubernetes {
-      label 'jenkins-insights-data-py'
+      label 'jenkins-postgris'
       yamlFile 'jenkinsPodTemplate.yml'
     }
   }
