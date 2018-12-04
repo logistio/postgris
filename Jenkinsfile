@@ -40,7 +40,7 @@ pipeline {
                   sh "docker push ${config.docker.server}/${config.docker.postgrisRepository}:${config.docker.postgris96Version}-${containerTag}"
             } // container('docker')
           } // steps
-        } // stage('Build & Push Potgris 9.6')
+        } // stage('Build & Push Potgris9.6')
         stage('Build & Push Postgris 11'){
           when {
             expression { config.docker.rebuildPostgris11 == 'true' }
