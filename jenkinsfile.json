@@ -1,0 +1,12 @@
+{
+    "docker": {
+        "server": "quay.io/logistio",
+        "postgrisRepository": "postgris",
+        "username": "logistio-deploy",
+        "rebuildPostgris96": "true",
+        "postgris96Version": "9.6--2.4.0",
+        "postgris11Version": "11.1--2.5.1",
+        "rebuildPostgris11": "true"
+    },
+    "buildBranch": "master"
+}
