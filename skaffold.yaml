@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2alpha2
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/squareroute-6f26e359/postgris
+    context: .
+    docker: 
+      dockerfile: Dockerfile
+      cacheFrom: 
+        - gcr.io/squareroute-6f26e359/postgris
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:{{.VERSION}}"
+  googleCloudBuild:
+    timeout: 10000s
+    dockerImage: gcr.io/cloud-builders/docker
+
+
