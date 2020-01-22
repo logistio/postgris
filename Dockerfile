@@ -5,6 +5,7 @@ FROM bitnami/postgresql:${POSTGRES_MAJOR}
 ARG POSTGIS_VERSION
 USER root
 
+
 RUN install_packages wget gcc make build-essential libxml2-dev libgeos-dev libproj-dev libgdal-dev \
     && cd /tmp \
     && wget "http://download.osgeo.org/postgis/source/postgis-${POSTGIS_VERSION}.tar.gz" \
